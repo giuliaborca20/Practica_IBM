@@ -3,7 +3,6 @@ from pyspark.sql import SparkSession
 spark = SparkSession.builder.getOrCreate()
 df = spark.read.csv("Erasmus.csv", header=True)
 
-# tema 1
 # selectare coloane
 d2 = df.select(["Receiving Country Code", "Sending Country Code"])
 
