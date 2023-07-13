@@ -1,0 +1,8 @@
+import pyspark
+from pyspark.sql import SparkSession
+
+spark = SparkSession.builder.appName("SparkByExamples.com").master("local").getOrCreate()
+
+df_pyspark = spark.read.csv("Erasmus.csv", header=True, inferSchema=True)
+df_pyspark = df_pyspark.select(["Mobility Duration","Receiving Country Code"])
+df_pyspark.show()
